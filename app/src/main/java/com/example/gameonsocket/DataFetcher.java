@@ -1,11 +1,8 @@
 package com.example.gameonsocket;
 
-import android.databinding.DataBindingUtil;
+import android.annotation.SuppressLint;
 import android.os.AsyncTask;
-import android.renderscript.ScriptGroup;
 import android.util.Log;
-
-import com.example.gameonsocket.databinding.ActivityMainBinding;
 
 import java.io.DataInputStream;
 import java.io.IOException;
@@ -14,13 +11,14 @@ import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.Socket;
 
-
+@SuppressLint("StaticFieldLeak")
 public class DataFetcher extends AsyncTask<String, Void, String> {
 
     private static final String TAG = "fetcherLogs";
     private boolean myTurn;
+
     private myLineView m01, m12, m23, m34, m45, m67, m78, m89, m910, m1011, m1213, m1314, m1415, m1516, m1617, m1819, m1920, m2021, m2122, m2223, m2425, m2526, m2627, m2728, m2829, m3031, m3132, m3233, m3334, m3435, m3637, m3738, m3839, m3940, m4041, m4243, m4344, m4445, m4546, m4647;
-    private myLineView n06, n17, n28, n39, n410, n511, n612, n713, n814, n915, n1016, n1117, n1218, n1319, n1420, n1521, n1622, n1723, n1824, n1925, n2026, n2127, n2228, n2329, n2430, n2531, n2632, n2733, n2834, n2935, n3036, n3137, n3238, n3339, n3440, n3541, n3642, n3743, n3844, n3845, n4046, n4147;
+    private myLineView  m06,  m17,  m28,  m39,  m410,  m511,  m612,  m713,  m814,  m915,  m1016,  m1117,  m1218,  m1319,  m1420,  m1521,  m1622,  m1723,  m1824,  m1925,  m2026,  m2127,  m2228,  m2329,  m2430,  m2531,  m2632,  m2733,  m2834,  m2935,  m3036,  m3137,  m3238,  m3339,  m3440,  m3541,  m3642,  m3743,  m3844,  m3945,  m4046,  m4147;
 
 
     @Override
@@ -84,20 +82,20 @@ public class DataFetcher extends AsyncTask<String, Void, String> {
                         while (netUtils.waitingToSend) {
                         }
                         sendUserAction(netUtils.userMove);
-                    } else {
-                        int userNum = Integer.parseInt(readLine.substring(0, 0));
+                    } else if (!readLine.contains("turn") && readLine != null){
+                        int userNum = Integer.parseInt(readLine.substring(0, 1));
                         switch (userNum) {
                             case 0:
-                                setNewMoveToBoard(readLine.substring(2, 4), userNum, R.color.red);
+                                setNewMoveToBoard(readLine.substring(2), userNum, R.color.red);
                                 break;
                             case 1:
-                                setNewMoveToBoard(readLine.substring(2, 4), userNum, R.color.green);
+                                setNewMoveToBoard(readLine.substring(2), userNum, R.color.green);
                                 break;
                             case 2:
-                                setNewMoveToBoard(readLine.substring(2, 4), userNum, R.color.yellow);
+                                setNewMoveToBoard(readLine.substring(2), userNum, R.color.yellow);
                                 break;
                             case 3:
-                                setNewMoveToBoard(readLine.substring(2, 4), userNum, R.color.black);
+                                setNewMoveToBoard(readLine.substring(2), userNum, R.color.black);
                                 break;
                         }
 
@@ -111,335 +109,334 @@ public class DataFetcher extends AsyncTask<String, Void, String> {
     }
 
     private void setNewMoveToBoard(String move, int userNum, int color) {
-        ActivityMainBinding binding = DataBindingUtil.setContentView(netUtils.ctx, R.layout.activity_main);
         switch (move) {
             case "0,1":
-                binding.l01.setBackgroundResource(color);
-                binding.l01.setClickable(false);
+                m01.setBackgroundResource(color);
+                m01.setClickable(false);
                 break;
             case "1,2":
-                binding.l12.setBackgroundResource(color);
-                binding.l12.setClickable(false);
+                m12.setBackgroundResource(color);
+                m12.setClickable(false);
                 break;
             case "2,3":
-                binding.l23.setBackgroundResource(color);
-                binding.l23.setClickable(false);
+                m23.setBackgroundResource(color);
+                m23.setClickable(false);
                 break;
             case "3,4":
-                binding.l34.setBackgroundResource(color);
-                binding.l34.setClickable(false);
+                m34.setBackgroundResource(color);
+                m34.setClickable(false);
                 break;
             case "4,5":
-                binding.l45.setBackgroundResource(color);
-                binding.l45.setClickable(false);
+                m45.setBackgroundResource(color);
+                m45.setClickable(false);
                 break;
             case "6,7":
-                binding.l67.setBackgroundResource(color);
-                binding.l67.setClickable(false);
+                m67.setBackgroundResource(color);
+                m67.setClickable(false);
                 break;
             case "7,8":
-                binding.l78.setBackgroundResource(color);
-                binding.l78.setClickable(false);
+                m78.setBackgroundResource(color);
+                m78.setClickable(false);
                 break;
             case "8,9":
-                binding.l89.setBackgroundResource(color);
-                binding.l89.setClickable(false);
+                m89.setBackgroundResource(color);
+                m89.setClickable(false);
                 break;
             case "0,6":
-                binding.l06.setBackgroundResource(color);
-                binding.l06.setClickable(false);
+                m06.setBackgroundResource(color);
+                m06.setClickable(false);
                 break;
             case "1,7":
-                binding.l17.setBackgroundResource(color);
-                binding.l17.setClickable(false);
+                m17.setBackgroundResource(color);
+                m17.setClickable(false);
                 break;
             case "2,8":
-                binding.l28.setBackgroundResource(color);
-                binding.l28.setClickable(false);
+                m28.setBackgroundResource(color);
+                m28.setClickable(false);
                 break;
             case "3,9":
-                binding.l39.setBackgroundResource(color);
-                binding.l39.setClickable(false);
+                m39.setBackgroundResource(color);
+                m39.setClickable(false);
                 break;
             case "9,10":
-                binding.l910.setBackgroundResource(color);
-                binding.l910.setClickable(false);
+                m910.setBackgroundResource(color);
+                m910.setClickable(false);
                 break;
             case "4,10":
-                binding.l410.setBackgroundResource(color);
-                binding.l410.setClickable(false);
+                m410.setBackgroundResource(color);
+                m410.setClickable(false);
                 break;
             case "5,11":
-                binding.l511.setBackgroundResource(color);
-                binding.l511.setClickable(false);
+                m511.setBackgroundResource(color);
+                m511.setClickable(false);
                 break;
             case "6,12":
-                binding.l612.setBackgroundResource(color);
-                binding.l612.setClickable(false);
+                m612.setBackgroundResource(color);
+                m612.setClickable(false);
                 break;
             case "7,13":
-                binding.l713.setBackgroundResource(color);
-                binding.l713.setClickable(false);
+                m713.setBackgroundResource(color);
+                m713.setClickable(false);
                 break;
             case "8,14":
-                binding.l814.setBackgroundResource(color);
-                binding.l814.setClickable(false);
+                m814.setBackgroundResource(color);
+                m814.setClickable(false);
                 break;
             case "9,15":
-                binding.l915.setBackgroundResource(color);
-                binding.l915.setClickable(false);
+                m915.setBackgroundResource(color);
+                m915.setClickable(false);
                 break;
             case "10,11":
-                binding.l1011.setBackgroundResource(color);
-                binding.l1011.setClickable(false);
+                m1011.setBackgroundResource(color);
+                m1011.setClickable(false);
                 break;
             case "13,14":
-                binding.l1314.setBackgroundResource(color);
-                binding.l1314.setClickable(false);
+                m1314.setBackgroundResource(color);
+                m1314.setClickable(false);
                 break;
             case "12,13":
-                binding.l1213.setBackgroundResource(color);
-                binding.l1213.setClickable(false);
+                m1213.setBackgroundResource(color);
+                m1213.setClickable(false);
                 break;
             case "14,15":
-                binding.l1415.setBackgroundResource(color);
-                binding.l1415.setClickable(false);
+                m1415.setBackgroundResource(color);
+                m1415.setClickable(false);
                 break;
             case "15,16":
-                binding.l1516.setBackgroundResource(color);
-                binding.l1516.setClickable(false);
+                m1516.setBackgroundResource(color);
+                m1516.setClickable(false);
                 break;
             case "16,17":
-                binding.l1617.setBackgroundResource(color);
-                binding.l1617.setClickable(false);
+                m1617.setBackgroundResource(color);
+                m1617.setClickable(false);
                 break;
             case "10,16":
-                binding.l1016.setBackgroundResource(color);
-                binding.l1016.setClickable(false);
+                m1016.setBackgroundResource(color);
+                m1016.setClickable(false);
                 break;
             case "11,17":
-                binding.l1117.setBackgroundResource(color);
-                binding.l1117.setClickable(false);
+                m1117.setBackgroundResource(color);
+                m1117.setClickable(false);
                 break;
             case "18,19":
-                binding.l1819.setBackgroundResource(color);
-                binding.l1819.setClickable(false);
+                m1819.setBackgroundResource(color);
+                m1819.setClickable(false);
                 break;
             case "19,20":
-                binding.l1920.setBackgroundResource(color);
-                binding.l1920.setClickable(false);
+                m1920.setBackgroundResource(color);
+                m1920.setClickable(false);
                 break;
             case "20,21":
-                binding.l2021.setBackgroundResource(color);
-                binding.l2021.setClickable(false);
+                m2021.setBackgroundResource(color);
+                m2021.setClickable(false);
                 break;
             case "21,22":
-                binding.l2122.setBackgroundResource(color);
-                binding.l2122.setClickable(false);
+                m2122.setBackgroundResource(color);
+                m2122.setClickable(false);
                 break;
             case "22,23":
-                binding.l2223.setBackgroundResource(color);
-                binding.l2223.setClickable(false);
+                m2223.setBackgroundResource(color);
+                m2223.setClickable(false);
                 break;
             case "24,25":
-                binding.l2425.setBackgroundResource(color);
-                binding.l2425.setClickable(false);
+                m2425.setBackgroundResource(color);
+                m2425.setClickable(false);
                 break;
             case "25,26":
-                binding.l2526.setBackgroundResource(color);
-                binding.l2526.setClickable(false);
+                m2526.setBackgroundResource(color);
+                m2526.setClickable(false);
                 break;
             case "26,27":
-                binding.l2627.setBackgroundResource(color);
-                binding.l2627.setClickable(false);
+                m2627.setBackgroundResource(color);
+                m2627.setClickable(false);
                 break;
             case "27,28":
-                binding.l2728.setBackgroundResource(color);
-                binding.l2728.setClickable(false);
+                m2728.setBackgroundResource(color);
+                m2728.setClickable(false);
                 break;
             case "28,29":
-                binding.l2829.setBackgroundResource(color);
-                binding.l2829.setClickable(false);
+                m2829.setBackgroundResource(color);
+                m2829.setClickable(false);
                 break;
             case "30,31":
-                binding.l3031.setBackgroundResource(color);
-                binding.l3031.setClickable(false);
+                m3031.setBackgroundResource(color);
+                m3031.setClickable(false);
                 break;
             case "31,32":
-                binding.l3132.setBackgroundResource(color);
-                binding.l3132.setClickable(false);
+                m3132.setBackgroundResource(color);
+                m3132.setClickable(false);
                 break;
             case "32,33":
-                binding.l3233.setBackgroundResource(color);
-                binding.l3233.setClickable(false);
+                m3233.setBackgroundResource(color);
+                m3233.setClickable(false);
                 break;
             case "33,34":
-                binding.l3334.setBackgroundResource(color);
-                binding.l3334.setClickable(false);
+                m3334.setBackgroundResource(color);
+                m3334.setClickable(false);
                 break;
             case "34,35":
-                binding.l3435.setBackgroundResource(color);
-                binding.l3435.setClickable(false);
+                m3435.setBackgroundResource(color);
+                m3435.setClickable(false);
                 break;
             case "36,37":
-                binding.l3637.setBackgroundResource(color);
-                binding.l3637.setClickable(false);
+                m3637.setBackgroundResource(color);
+                m3637.setClickable(false);
                 break;
             case "37,38":
-                binding.l3738.setBackgroundResource(color);
-                binding.l3738.setClickable(false);
+                m3738.setBackgroundResource(color);
+                m3738.setClickable(false);
                 break;
             case "38,39":
-                binding.l3839.setBackgroundResource(color);
-                binding.l3839.setClickable(false);
+                m3839.setBackgroundResource(color);
+                m3839.setClickable(false);
                 break;
             case "39,40":
-                binding.l3940.setBackgroundResource(color);
-                binding.l3940.setClickable(false);
+                m3940.setBackgroundResource(color);
+                m3940.setClickable(false);
                 break;
             case "40,41":
-                binding.l4041.setBackgroundResource(color);
-                binding.l4041.setClickable(false);
+                m4041.setBackgroundResource(color);
+                m4041.setClickable(false);
                 break;
             case "42,43":
-                binding.l4243.setBackgroundResource(color);
-                binding.l4243.setClickable(false);
+                m4243.setBackgroundResource(color);
+                m4243.setClickable(false);
                 break;
             case "43,44":
-                binding.l4344.setBackgroundResource(color);
-                binding.l4344.setClickable(false);
+                m4344.setBackgroundResource(color);
+                m4344.setClickable(false);
                 break;
             case "44,45":
-                binding.l4445.setBackgroundResource(color);
-                binding.l4445.setClickable(false);
+                m4445.setBackgroundResource(color);
+                m4445.setClickable(false);
                 break;
             case "45,46":
-                binding.l4546.setBackgroundResource(color);
-                binding.l4546.setClickable(false);
+                m4546.setBackgroundResource(color);
+                m4546.setClickable(false);
                 break;
             case "46,47":
-                binding.l4647.setBackgroundResource(color);
-                binding.l4647.setClickable(false);
+                m4647.setBackgroundResource(color);
+                m4647.setClickable(false);
                 break;
             case "12,18":
-                binding.l1218.setBackgroundResource(color);
-                binding.l1218.setClickable(false);
+                m1218.setBackgroundResource(color);
+                m1218.setClickable(false);
                 break;
             case "13,19":
-                binding.l1319.setBackgroundResource(color);
-                binding.l1319.setClickable(false);
+                m1319.setBackgroundResource(color);
+                m1319.setClickable(false);
                 break;
             case "14,20":
-                binding.l1420.setBackgroundResource(color);
-                binding.l1420.setClickable(false);
+                m1420.setBackgroundResource(color);
+                m1420.setClickable(false);
                 break;
             case "15,21":
-                binding.l1521.setBackgroundResource(color);
-                binding.l1521.setClickable(false);
+                m1521.setBackgroundResource(color);
+                m1521.setClickable(false);
                 break;
             case "16,22":
-                binding.l1622.setBackgroundResource(color);
-                binding.l1622.setClickable(false);
+                m1622.setBackgroundResource(color);
+                m1622.setClickable(false);
                 break;
             case "17,23":
-                binding.l1723.setBackgroundResource(color);
-                binding.l1723.setClickable(false);
+                m1723.setBackgroundResource(color);
+                m1723.setClickable(false);
                 break;
             case "18,24":
-                binding.l1824.setBackgroundResource(color);
-                binding.l1824.setClickable(false);
+                m1824.setBackgroundResource(color);
+                m1824.setClickable(false);
                 break;
             case "19,25":
-                binding.l1925.setBackgroundResource(color);
-                binding.l1925.setClickable(false);
+                m1925.setBackgroundResource(color);
+                m1925.setClickable(false);
                 break;
             case "20,26":
-                binding.l2026.setBackgroundResource(color);
-                binding.l2026.setClickable(false);
+                m2026.setBackgroundResource(color);
+                m2026.setClickable(false);
                 break;
             case "21,27":
-                binding.l2127.setBackgroundResource(color);
-                binding.l2127.setClickable(false);
+                m2127.setBackgroundResource(color);
+                m2127.setClickable(false);
                 break;
             case "22,28":
-                binding.l2228.setBackgroundResource(color);
-                binding.l2228.setClickable(false);
+                m2228.setBackgroundResource(color);
+                m2228.setClickable(false);
                 break;
             case "23,29":
-                binding.l2329.setBackgroundResource(color);
-                binding.l2329.setClickable(false);
+                m2329.setBackgroundResource(color);
+                m2329.setClickable(false);
                 break;
             case "24,30":
-                binding.l2430.setBackgroundResource(color);
-                binding.l2430.setClickable(false);
+                m2430.setBackgroundResource(color);
+                m2430.setClickable(false);
                 break;
             case "25,31":
-                binding.l2531.setBackgroundResource(color);
-                binding.l2531.setClickable(false);
+                m2531.setBackgroundResource(color);
+                m2531.setClickable(false);
                 break;
             case "26,32":
-                binding.l2632.setBackgroundResource(color);
-                binding.l2632.setClickable(false);
+                m2632.setBackgroundResource(color);
+                m2632.setClickable(false);
                 break;
             case "27,33":
-                binding.l2733.setBackgroundResource(color);
-                binding.l2733.setClickable(false);
+                m2733.setBackgroundResource(color);
+                m2733.setClickable(false);
                 break;
             case "28,34":
-                binding.l2834.setBackgroundResource(color);
-                binding.l2834.setClickable(false);
+                m2834.setBackgroundResource(color);
+                m2834.setClickable(false);
                 break;
             case "29,35":
-                binding.l2935.setBackgroundResource(color);
-                binding.l2935.setClickable(false);
+                m2935.setBackgroundResource(color);
+                m2935.setClickable(false);
                 break;
             case "30,36":
-                binding.l3036.setBackgroundResource(color);
-                binding.l3036.setClickable(false);
+                m3036.setBackgroundResource(color);
+                m3036.setClickable(false);
                 break;
             case "31,37":
-                binding.l3137.setBackgroundResource(color);
-                binding.l3137.setClickable(false);
+                m3137.setBackgroundResource(color);
+                m3137.setClickable(false);
                 break;
             case "32,38":
-                binding.l3238.setBackgroundResource(color);
-                binding.l3238.setClickable(false);
+                m3238.setBackgroundResource(color);
+                m3238.setClickable(false);
                 break;
             case "33,39":
-                binding.l3339.setBackgroundResource(color);
-                binding.l3339.setClickable(false);
+                m3339.setBackgroundResource(color);
+                m3339.setClickable(false);
                 break;
             case "34,40":
-                binding.l3440.setBackgroundResource(color);
-                binding.l3440.setClickable(false);
+                m3440.setBackgroundResource(color);
+                m3440.setClickable(false);
                 break;
             case "35,41":
-                binding.l3541.setBackgroundResource(color);
-                binding.l3541.setClickable(false);
+                m3541.setBackgroundResource(color);
+                m3541.setClickable(false);
                 break;
             case "36,42":
-                binding.l3642.setBackgroundResource(color);
-                binding.l3642.setClickable(false);
+                m3642.setBackgroundResource(color);
+                m3642.setClickable(false);
                 break;
             case "37,43":
-                binding.l3743.setBackgroundResource(color);
-                binding.l3743.setClickable(false);
+                m3743.setBackgroundResource(color);
+                m3743.setClickable(false);
                 break;
             case "38,44":
-                binding.l3844.setBackgroundResource(color);
-                binding.l3844.setClickable(false);
+                m3844.setBackgroundResource(color);
+                m3844.setClickable(false);
                 break;
             case "39,45":
-                binding.l3945.setBackgroundResource(color);
-                binding.l3945.setClickable(false);
+                m3945.setBackgroundResource(color);
+                m3945.setClickable(false);
                 break;
             case "40,46":
-                binding.l4046.setBackgroundResource(color);
-                binding.l4046.setClickable(false);
+                m4046.setBackgroundResource(color);
+                m4046.setClickable(false);
                 break;
             case "41,47":
-                binding.l4147.setBackgroundResource(color);
-                binding.l4147.setClickable(false);
+                m4147.setBackgroundResource(color);
+                m4147.setClickable(false);
                 break;
         }
     }
@@ -461,18 +458,18 @@ public class DataFetcher extends AsyncTask<String, Void, String> {
         m1415 = netUtils.ctx.findViewById(R.id.l1415);
         m1516 = netUtils.ctx.findViewById(R.id.l1516);
         m1617 = netUtils.ctx.findViewById(R.id.l1617);
-        n06 = netUtils.ctx.findViewById(R.id.l06);
-        n17 = netUtils.ctx.findViewById(R.id.l17);
-        n28 = netUtils.ctx.findViewById(R.id.l28);
-        n39 = netUtils.ctx.findViewById(R.id.l39);
-        n410 = netUtils.ctx.findViewById(R.id.l410);
-        n511 = netUtils.ctx.findViewById(R.id.l511);
-        n612 = netUtils.ctx.findViewById(R.id.l612);
-        n713 = netUtils.ctx.findViewById(R.id.l713);
-        n814 = netUtils.ctx.findViewById(R.id.l814);
-        n915 = netUtils.ctx.findViewById(R.id.l915);
-        n1016 = netUtils.ctx.findViewById(R.id.l1016);
-        n1117 = netUtils.ctx.findViewById(R.id.l1117);
+         m06 = netUtils.ctx.findViewById(R.id.l06);
+         m17 = netUtils.ctx.findViewById(R.id.l17);
+         m28 = netUtils.ctx.findViewById(R.id.l28);
+         m39 = netUtils.ctx.findViewById(R.id.l39);
+         m410 = netUtils.ctx.findViewById(R.id.l410);
+         m511 = netUtils.ctx.findViewById(R.id.l511);
+         m612 = netUtils.ctx.findViewById(R.id.l612);
+         m713 = netUtils.ctx.findViewById(R.id.l713);
+         m814 = netUtils.ctx.findViewById(R.id.l814);
+         m915 = netUtils.ctx.findViewById(R.id.l915);
+         m1016 = netUtils.ctx.findViewById(R.id.l1016);
+         m1117 = netUtils.ctx.findViewById(R.id.l1117);
         m1819 = netUtils.ctx.findViewById(R.id.l1819);
         m1920 = netUtils.ctx.findViewById(R.id.l1920);
         m2021 = netUtils.ctx.findViewById(R.id.l2021);
@@ -498,36 +495,36 @@ public class DataFetcher extends AsyncTask<String, Void, String> {
         m4445 = netUtils.ctx.findViewById(R.id.l4445);
         m4546 = netUtils.ctx.findViewById(R.id.l4546);
         m4647 = netUtils.ctx.findViewById(R.id.l4647);
-        n1218 = netUtils.ctx.findViewById(R.id.l1218);
-        n1319 = netUtils.ctx.findViewById(R.id.l1319);
-        n1420 = netUtils.ctx.findViewById(R.id.l1420);
-        n1521 = netUtils.ctx.findViewById(R.id.l1521);
-        n1622 = netUtils.ctx.findViewById(R.id.l1622);
-        n1723 = netUtils.ctx.findViewById(R.id.l1723);
-        n1824 = netUtils.ctx.findViewById(R.id.l1824);
-        n1925 = netUtils.ctx.findViewById(R.id.l1925);
-        n2026 = netUtils.ctx.findViewById(R.id.l2026);
-        n2127 = netUtils.ctx.findViewById(R.id.l2127);
-        n2228 = netUtils.ctx.findViewById(R.id.l2228);
-        n2329 = netUtils.ctx.findViewById(R.id.l2329);
-        n2430 = netUtils.ctx.findViewById(R.id.l2430);
-        n2531 = netUtils.ctx.findViewById(R.id.l2531);
-        n2632 = netUtils.ctx.findViewById(R.id.l2632);
-        n2733 = netUtils.ctx.findViewById(R.id.l2733);
-        n2834 = netUtils.ctx.findViewById(R.id.l2834);
-        n2935 = netUtils.ctx.findViewById(R.id.l2935);
-        n3036 = netUtils.ctx.findViewById(R.id.l3036);
-        n3137 = netUtils.ctx.findViewById(R.id.l3137);
-        n3238 = netUtils.ctx.findViewById(R.id.l3238);
-        n3339 = netUtils.ctx.findViewById(R.id.l3339);
-        n3440 = netUtils.ctx.findViewById(R.id.l3440);
-        n3541 = netUtils.ctx.findViewById(R.id.l3541);
-        n3642 = netUtils.ctx.findViewById(R.id.l3642);
-        n3743 = netUtils.ctx.findViewById(R.id.l3743);
-        n3844 = netUtils.ctx.findViewById(R.id.l3844);
-        n3845 = netUtils.ctx.findViewById(R.id.l3945);
-        n4046 = netUtils.ctx.findViewById(R.id.l4046);
-        n4147 = netUtils.ctx.findViewById(R.id.l4147);
+         m1218 = netUtils.ctx.findViewById(R.id.l1218);
+         m1319 = netUtils.ctx.findViewById(R.id.l1319);
+         m1420 = netUtils.ctx.findViewById(R.id.l1420);
+         m1521 = netUtils.ctx.findViewById(R.id.l1521);
+         m1622 = netUtils.ctx.findViewById(R.id.l1622);
+         m1723 = netUtils.ctx.findViewById(R.id.l1723);
+         m1824 = netUtils.ctx.findViewById(R.id.l1824);
+         m1925 = netUtils.ctx.findViewById(R.id.l1925);
+         m2026 = netUtils.ctx.findViewById(R.id.l2026);
+         m2127 = netUtils.ctx.findViewById(R.id.l2127);
+         m2228 = netUtils.ctx.findViewById(R.id.l2228);
+         m2329 = netUtils.ctx.findViewById(R.id.l2329);
+         m2430 = netUtils.ctx.findViewById(R.id.l2430);
+         m2531 = netUtils.ctx.findViewById(R.id.l2531);
+         m2632 = netUtils.ctx.findViewById(R.id.l2632);
+         m2733 = netUtils.ctx.findViewById(R.id.l2733);
+         m2834 = netUtils.ctx.findViewById(R.id.l2834);
+         m2935 = netUtils.ctx.findViewById(R.id.l2935);
+         m3036 = netUtils.ctx.findViewById(R.id.l3036);
+         m3137 = netUtils.ctx.findViewById(R.id.l3137);
+         m3238 = netUtils.ctx.findViewById(R.id.l3238);
+         m3339 = netUtils.ctx.findViewById(R.id.l3339);
+         m3440 = netUtils.ctx.findViewById(R.id.l3440);
+         m3541 = netUtils.ctx.findViewById(R.id.l3541);
+         m3642 = netUtils.ctx.findViewById(R.id.l3642);
+         m3743 = netUtils.ctx.findViewById(R.id.l3743);
+         m3844 = netUtils.ctx.findViewById(R.id.l3844);
+         m3945 = netUtils.ctx.findViewById(R.id.l3945);
+         m4046 = netUtils.ctx.findViewById(R.id.l4046);
+         m4147 = netUtils.ctx.findViewById(R.id.l4147);
     }
 
 

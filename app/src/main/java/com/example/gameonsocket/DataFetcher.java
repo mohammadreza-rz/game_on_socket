@@ -52,7 +52,7 @@ public class DataFetcher extends AsyncTask<String, Void, String> {
 
     private void initSocket(String name) {
         try {
-            netUtils.s = new Socket(InetAddress.getByName("172.16.35.183"), 2000);
+            netUtils.s = new Socket(InetAddress.getByName("192.168.43.67"), 2000);
             DataInputStream is = new DataInputStream(netUtils.s.getInputStream());
             int nobat = Integer.parseInt(is.readLine());
             switch (nobat) {
@@ -82,7 +82,7 @@ public class DataFetcher extends AsyncTask<String, Void, String> {
                         while (netUtils.waitingToSend) {
                         }
                         sendUserAction(netUtils.userMove);
-                    } else if (!readLine.contains("turn") && readLine != null){
+                    } else if (!readLine.equals("") && !readLine.contains("turn")){
                         int userNum = Integer.parseInt(readLine.substring(0, 1));
                         switch (userNum) {
                             case 0:
@@ -108,337 +108,345 @@ public class DataFetcher extends AsyncTask<String, Void, String> {
         }
     }
 
-    private void setNewMoveToBoard(String move, int userNum, int color) {
-        switch (move) {
-            case "0,1":
-                m01.setBackgroundResource(color);
-                m01.setClickable(false);
-                break;
-            case "1,2":
-                m12.setBackgroundResource(color);
-                m12.setClickable(false);
-                break;
-            case "2,3":
-                m23.setBackgroundResource(color);
-                m23.setClickable(false);
-                break;
-            case "3,4":
-                m34.setBackgroundResource(color);
-                m34.setClickable(false);
-                break;
-            case "4,5":
-                m45.setBackgroundResource(color);
-                m45.setClickable(false);
-                break;
-            case "6,7":
-                m67.setBackgroundResource(color);
-                m67.setClickable(false);
-                break;
-            case "7,8":
-                m78.setBackgroundResource(color);
-                m78.setClickable(false);
-                break;
-            case "8,9":
-                m89.setBackgroundResource(color);
-                m89.setClickable(false);
-                break;
-            case "0,6":
-                m06.setBackgroundResource(color);
-                m06.setClickable(false);
-                break;
-            case "1,7":
-                m17.setBackgroundResource(color);
-                m17.setClickable(false);
-                break;
-            case "2,8":
-                m28.setBackgroundResource(color);
-                m28.setClickable(false);
-                break;
-            case "3,9":
-                m39.setBackgroundResource(color);
-                m39.setClickable(false);
-                break;
-            case "9,10":
-                m910.setBackgroundResource(color);
-                m910.setClickable(false);
-                break;
-            case "4,10":
-                m410.setBackgroundResource(color);
-                m410.setClickable(false);
-                break;
-            case "5,11":
-                m511.setBackgroundResource(color);
-                m511.setClickable(false);
-                break;
-            case "6,12":
-                m612.setBackgroundResource(color);
-                m612.setClickable(false);
-                break;
-            case "7,13":
-                m713.setBackgroundResource(color);
-                m713.setClickable(false);
-                break;
-            case "8,14":
-                m814.setBackgroundResource(color);
-                m814.setClickable(false);
-                break;
-            case "9,15":
-                m915.setBackgroundResource(color);
-                m915.setClickable(false);
-                break;
-            case "10,11":
-                m1011.setBackgroundResource(color);
-                m1011.setClickable(false);
-                break;
-            case "13,14":
-                m1314.setBackgroundResource(color);
-                m1314.setClickable(false);
-                break;
-            case "12,13":
-                m1213.setBackgroundResource(color);
-                m1213.setClickable(false);
-                break;
-            case "14,15":
-                m1415.setBackgroundResource(color);
-                m1415.setClickable(false);
-                break;
-            case "15,16":
-                m1516.setBackgroundResource(color);
-                m1516.setClickable(false);
-                break;
-            case "16,17":
-                m1617.setBackgroundResource(color);
-                m1617.setClickable(false);
-                break;
-            case "10,16":
-                m1016.setBackgroundResource(color);
-                m1016.setClickable(false);
-                break;
-            case "11,17":
-                m1117.setBackgroundResource(color);
-                m1117.setClickable(false);
-                break;
-            case "18,19":
-                m1819.setBackgroundResource(color);
-                m1819.setClickable(false);
-                break;
-            case "19,20":
-                m1920.setBackgroundResource(color);
-                m1920.setClickable(false);
-                break;
-            case "20,21":
-                m2021.setBackgroundResource(color);
-                m2021.setClickable(false);
-                break;
-            case "21,22":
-                m2122.setBackgroundResource(color);
-                m2122.setClickable(false);
-                break;
-            case "22,23":
-                m2223.setBackgroundResource(color);
-                m2223.setClickable(false);
-                break;
-            case "24,25":
-                m2425.setBackgroundResource(color);
-                m2425.setClickable(false);
-                break;
-            case "25,26":
-                m2526.setBackgroundResource(color);
-                m2526.setClickable(false);
-                break;
-            case "26,27":
-                m2627.setBackgroundResource(color);
-                m2627.setClickable(false);
-                break;
-            case "27,28":
-                m2728.setBackgroundResource(color);
-                m2728.setClickable(false);
-                break;
-            case "28,29":
-                m2829.setBackgroundResource(color);
-                m2829.setClickable(false);
-                break;
-            case "30,31":
-                m3031.setBackgroundResource(color);
-                m3031.setClickable(false);
-                break;
-            case "31,32":
-                m3132.setBackgroundResource(color);
-                m3132.setClickable(false);
-                break;
-            case "32,33":
-                m3233.setBackgroundResource(color);
-                m3233.setClickable(false);
-                break;
-            case "33,34":
-                m3334.setBackgroundResource(color);
-                m3334.setClickable(false);
-                break;
-            case "34,35":
-                m3435.setBackgroundResource(color);
-                m3435.setClickable(false);
-                break;
-            case "36,37":
-                m3637.setBackgroundResource(color);
-                m3637.setClickable(false);
-                break;
-            case "37,38":
-                m3738.setBackgroundResource(color);
-                m3738.setClickable(false);
-                break;
-            case "38,39":
-                m3839.setBackgroundResource(color);
-                m3839.setClickable(false);
-                break;
-            case "39,40":
-                m3940.setBackgroundResource(color);
-                m3940.setClickable(false);
-                break;
-            case "40,41":
-                m4041.setBackgroundResource(color);
-                m4041.setClickable(false);
-                break;
-            case "42,43":
-                m4243.setBackgroundResource(color);
-                m4243.setClickable(false);
-                break;
-            case "43,44":
-                m4344.setBackgroundResource(color);
-                m4344.setClickable(false);
-                break;
-            case "44,45":
-                m4445.setBackgroundResource(color);
-                m4445.setClickable(false);
-                break;
-            case "45,46":
-                m4546.setBackgroundResource(color);
-                m4546.setClickable(false);
-                break;
-            case "46,47":
-                m4647.setBackgroundResource(color);
-                m4647.setClickable(false);
-                break;
-            case "12,18":
-                m1218.setBackgroundResource(color);
-                m1218.setClickable(false);
-                break;
-            case "13,19":
-                m1319.setBackgroundResource(color);
-                m1319.setClickable(false);
-                break;
-            case "14,20":
-                m1420.setBackgroundResource(color);
-                m1420.setClickable(false);
-                break;
-            case "15,21":
-                m1521.setBackgroundResource(color);
-                m1521.setClickable(false);
-                break;
-            case "16,22":
-                m1622.setBackgroundResource(color);
-                m1622.setClickable(false);
-                break;
-            case "17,23":
-                m1723.setBackgroundResource(color);
-                m1723.setClickable(false);
-                break;
-            case "18,24":
-                m1824.setBackgroundResource(color);
-                m1824.setClickable(false);
-                break;
-            case "19,25":
-                m1925.setBackgroundResource(color);
-                m1925.setClickable(false);
-                break;
-            case "20,26":
-                m2026.setBackgroundResource(color);
-                m2026.setClickable(false);
-                break;
-            case "21,27":
-                m2127.setBackgroundResource(color);
-                m2127.setClickable(false);
-                break;
-            case "22,28":
-                m2228.setBackgroundResource(color);
-                m2228.setClickable(false);
-                break;
-            case "23,29":
-                m2329.setBackgroundResource(color);
-                m2329.setClickable(false);
-                break;
-            case "24,30":
-                m2430.setBackgroundResource(color);
-                m2430.setClickable(false);
-                break;
-            case "25,31":
-                m2531.setBackgroundResource(color);
-                m2531.setClickable(false);
-                break;
-            case "26,32":
-                m2632.setBackgroundResource(color);
-                m2632.setClickable(false);
-                break;
-            case "27,33":
-                m2733.setBackgroundResource(color);
-                m2733.setClickable(false);
-                break;
-            case "28,34":
-                m2834.setBackgroundResource(color);
-                m2834.setClickable(false);
-                break;
-            case "29,35":
-                m2935.setBackgroundResource(color);
-                m2935.setClickable(false);
-                break;
-            case "30,36":
-                m3036.setBackgroundResource(color);
-                m3036.setClickable(false);
-                break;
-            case "31,37":
-                m3137.setBackgroundResource(color);
-                m3137.setClickable(false);
-                break;
-            case "32,38":
-                m3238.setBackgroundResource(color);
-                m3238.setClickable(false);
-                break;
-            case "33,39":
-                m3339.setBackgroundResource(color);
-                m3339.setClickable(false);
-                break;
-            case "34,40":
-                m3440.setBackgroundResource(color);
-                m3440.setClickable(false);
-                break;
-            case "35,41":
-                m3541.setBackgroundResource(color);
-                m3541.setClickable(false);
-                break;
-            case "36,42":
-                m3642.setBackgroundResource(color);
-                m3642.setClickable(false);
-                break;
-            case "37,43":
-                m3743.setBackgroundResource(color);
-                m3743.setClickable(false);
-                break;
-            case "38,44":
-                m3844.setBackgroundResource(color);
-                m3844.setClickable(false);
-                break;
-            case "39,45":
-                m3945.setBackgroundResource(color);
-                m3945.setClickable(false);
-                break;
-            case "40,46":
-                m4046.setBackgroundResource(color);
-                m4046.setClickable(false);
-                break;
-            case "41,47":
-                m4147.setBackgroundResource(color);
-                m4147.setClickable(false);
-                break;
-        }
+
+
+    private void setNewMoveToBoard(final String move, int userNum, final int color) {
+        netUtils.ctx.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                switch (move) {
+                    case "0,1":
+                        m01.setBackgroundResource(color);
+                        m01.setClickable(false);
+                        break;
+                    case "1,2":
+                        m12.setBackgroundResource(color);
+                        m12.setClickable(false);
+                        break;
+                    case "2,3":
+                        m23.setBackgroundResource(color);
+                        m23.setClickable(false);
+                        break;
+                    case "3,4":
+                        m34.setBackgroundResource(color);
+                        m34.setClickable(false);
+                        break;
+                    case "4,5":
+                        m45.setBackgroundResource(color);
+                        m45.setClickable(false);
+                        break;
+                    case "6,7":
+                        m67.setBackgroundResource(color);
+                        m67.setClickable(false);
+                        break;
+                    case "7,8":
+                        m78.setBackgroundResource(color);
+                        m78.setClickable(false);
+                        break;
+                    case "8,9":
+                        m89.setBackgroundResource(color);
+                        m89.setClickable(false);
+                        break;
+                    case "0,6":
+                        m06.setBackgroundResource(color);
+                        m06.setClickable(false);
+                        break;
+                    case "1,7":
+                        m17.setBackgroundResource(color);
+                        m17.setClickable(false);
+                        break;
+                    case "2,8":
+                        m28.setBackgroundResource(color);
+                        m28.setClickable(false);
+                        break;
+                    case "3,9":
+                        m39.setBackgroundResource(color);
+                        m39.setClickable(false);
+                        break;
+                    case "9,10":
+                        m910.setBackgroundResource(color);
+                        m910.setClickable(false);
+                        break;
+                    case "4,10":
+                        m410.setBackgroundResource(color);
+                        m410.setClickable(false);
+                        break;
+                    case "5,11":
+                        m511.setBackgroundResource(color);
+                        m511.setClickable(false);
+                        break;
+                    case "6,12":
+                        m612.setBackgroundResource(color);
+                        m612.setClickable(false);
+                        break;
+                    case "7,13":
+                        m713.setBackgroundResource(color);
+                        m713.setClickable(false);
+                        break;
+                    case "8,14":
+                        m814.setBackgroundResource(color);
+                        m814.setClickable(false);
+                        break;
+                    case "9,15":
+                        m915.setBackgroundResource(color);
+                        m915.setClickable(false);
+                        break;
+                    case "10,11":
+                        m1011.setBackgroundResource(color);
+                        m1011.setClickable(false);
+                        break;
+                    case "13,14":
+                        m1314.setBackgroundResource(color);
+                        m1314.setClickable(false);
+                        break;
+                    case "12,13":
+                        m1213.setBackgroundResource(color);
+                        m1213.setClickable(false);
+                        break;
+                    case "14,15":
+                        m1415.setBackgroundResource(color);
+                        m1415.setClickable(false);
+                        break;
+                    case "15,16":
+                        m1516.setBackgroundResource(color);
+                        m1516.setClickable(false);
+                        break;
+                    case "16,17":
+                        m1617.setBackgroundResource(color);
+                        m1617.setClickable(false);
+                        break;
+                    case "10,16":
+                        m1016.setBackgroundResource(color);
+                        m1016.setClickable(false);
+                        break;
+                    case "11,17":
+                        m1117.setBackgroundResource(color);
+                        m1117.setClickable(false);
+                        break;
+                    case "18,19":
+                        m1819.setBackgroundResource(color);
+                        m1819.setClickable(false);
+                        break;
+                    case "19,20":
+                        m1920.setBackgroundResource(color);
+                        m1920.setClickable(false);
+                        break;
+                    case "20,21":
+                        m2021.setBackgroundResource(color);
+                        m2021.setClickable(false);
+                        break;
+                    case "21,22":
+                        m2122.setBackgroundResource(color);
+                        m2122.setClickable(false);
+                        break;
+                    case "22,23":
+                        m2223.setBackgroundResource(color);
+                        m2223.setClickable(false);
+                        break;
+                    case "24,25":
+                        m2425.setBackgroundResource(color);
+                        m2425.setClickable(false);
+                        break;
+                    case "25,26":
+                        m2526.setBackgroundResource(color);
+                        m2526.setClickable(false);
+                        break;
+                    case "26,27":
+                        m2627.setBackgroundResource(color);
+                        m2627.setClickable(false);
+                        break;
+                    case "27,28":
+                        m2728.setBackgroundResource(color);
+                        m2728.setClickable(false);
+                        break;
+                    case "28,29":
+                        m2829.setBackgroundResource(color);
+                        m2829.setClickable(false);
+                        break;
+                    case "30,31":
+                        m3031.setBackgroundResource(color);
+                        m3031.setClickable(false);
+                        break;
+                    case "31,32":
+                        m3132.setBackgroundResource(color);
+                        m3132.setClickable(false);
+                        break;
+                    case "32,33":
+                        m3233.setBackgroundResource(color);
+                        m3233.setClickable(false);
+                        break;
+                    case "33,34":
+                        m3334.setBackgroundResource(color);
+                        m3334.setClickable(false);
+                        break;
+                    case "34,35":
+                        m3435.setBackgroundResource(color);
+                        m3435.setClickable(false);
+                        break;
+                    case "36,37":
+                        m3637.setBackgroundResource(color);
+                        m3637.setClickable(false);
+                        break;
+                    case "37,38":
+                        m3738.setBackgroundResource(color);
+                        m3738.setClickable(false);
+                        break;
+                    case "38,39":
+                        m3839.setBackgroundResource(color);
+                        m3839.setClickable(false);
+                        break;
+                    case "39,40":
+                        m3940.setBackgroundResource(color);
+                        m3940.setClickable(false);
+                        break;
+                    case "40,41":
+                        m4041.setBackgroundResource(color);
+                        m4041.setClickable(false);
+                        break;
+                    case "42,43":
+                        m4243.setBackgroundResource(color);
+                        m4243.setClickable(false);
+                        break;
+                    case "43,44":
+                        m4344.setBackgroundResource(color);
+                        m4344.setClickable(false);
+                        break;
+                    case "44,45":
+                        m4445.setBackgroundResource(color);
+                        m4445.setClickable(false);
+                        break;
+                    case "45,46":
+                        m4546.setBackgroundResource(color);
+                        m4546.setClickable(false);
+                        break;
+                    case "46,47":
+                        m4647.setBackgroundResource(color);
+                        m4647.setClickable(false);
+                        break;
+                    case "12,18":
+                        m1218.setBackgroundResource(color);
+                        m1218.setClickable(false);
+                        break;
+                    case "13,19":
+                        m1319.setBackgroundResource(color);
+                        m1319.setClickable(false);
+                        break;
+                    case "14,20":
+                        m1420.setBackgroundResource(color);
+                        m1420.setClickable(false);
+                        break;
+                    case "15,21":
+                        m1521.setBackgroundResource(color);
+                        m1521.setClickable(false);
+                        break;
+                    case "16,22":
+                        m1622.setBackgroundResource(color);
+                        m1622.setClickable(false);
+                        break;
+                    case "17,23":
+                        m1723.setBackgroundResource(color);
+                        m1723.setClickable(false);
+                        break;
+                    case "18,24":
+                        m1824.setBackgroundResource(color);
+                        m1824.setClickable(false);
+                        break;
+                    case "19,25":
+                        m1925.setBackgroundResource(color);
+                        m1925.setClickable(false);
+                        break;
+                    case "20,26":
+                        m2026.setBackgroundResource(color);
+                        m2026.setClickable(false);
+                        break;
+                    case "21,27":
+                        m2127.setBackgroundResource(color);
+                        m2127.setClickable(false);
+                        break;
+                    case "22,28":
+                        m2228.setBackgroundResource(color);
+                        m2228.setClickable(false);
+                        break;
+                    case "23,29":
+                        m2329.setBackgroundResource(color);
+                        m2329.setClickable(false);
+                        break;
+                    case "24,30":
+                        m2430.setBackgroundResource(color);
+                        m2430.setClickable(false);
+                        break;
+                    case "25,31":
+                        m2531.setBackgroundResource(color);
+                        m2531.setClickable(false);
+                        break;
+                    case "26,32":
+                        m2632.setBackgroundResource(color);
+                        m2632.setClickable(false);
+                        break;
+                    case "27,33":
+                        m2733.setBackgroundResource(color);
+                        m2733.setClickable(false);
+                        break;
+                    case "28,34":
+                        m2834.setBackgroundResource(color);
+                        m2834.setClickable(false);
+                        break;
+                    case "29,35":
+                        m2935.setBackgroundResource(color);
+                        m2935.setClickable(false);
+                        break;
+                    case "30,36":
+                        m3036.setBackgroundResource(color);
+                        m3036.setClickable(false);
+                        break;
+                    case "31,37":
+                        m3137.setBackgroundResource(color);
+                        m3137.setClickable(false);
+                        break;
+                    case "32,38":
+                        m3238.setBackgroundResource(color);
+                        m3238.setClickable(false);
+                        break;
+                    case "33,39":
+                        m3339.setBackgroundResource(color);
+                        m3339.setClickable(false);
+                        break;
+                    case "34,40":
+                        m3440.setBackgroundResource(color);
+                        m3440.setClickable(false);
+                        break;
+                    case "35,41":
+                        m3541.setBackgroundResource(color);
+                        m3541.setClickable(false);
+                        break;
+                    case "36,42":
+                        m3642.setBackgroundResource(color);
+                        m3642.setClickable(false);
+                        break;
+                    case "37,43":
+                        m3743.setBackgroundResource(color);
+                        m3743.setClickable(false);
+                        break;
+                    case "38,44":
+                        m3844.setBackgroundResource(color);
+                        m3844.setClickable(false);
+                        break;
+                    case "39,45":
+                        m3945.setBackgroundResource(color);
+                        m3945.setClickable(false);
+                        break;
+                    case "40,46":
+                        m4046.setBackgroundResource(color);
+                        m4046.setClickable(false);
+                        break;
+                    case "41,47":
+                        m4147.setBackgroundResource(color);
+                        m4147.setClickable(false);
+                        break;
+                }
+            }
+        });
+
     }
 
 

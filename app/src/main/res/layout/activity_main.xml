@@ -62,7 +62,7 @@
                 android:layout_height="15dp"
                 android:background="@drawable/round" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l01"
                 android:layout_width="40dp"
                 android:layout_height="15dp"
@@ -73,7 +73,7 @@
                 android:layout_height="15dp"
                 android:background="@drawable/round" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l12"
                 android:layout_width="40dp"
                 android:layout_height="17dp"
@@ -84,7 +84,7 @@
                 android:layout_height="15dp"
                 android:background="@drawable/round" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l23"
                 android:layout_width="40dp"
                 android:layout_height="15dp"
@@ -95,7 +95,7 @@
                 android:layout_height="15dp"
                 android:background="@drawable/round" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l34"
                 android:layout_width="40dp"
                 android:layout_height="15dp"
@@ -106,7 +106,7 @@
                 android:layout_height="15dp"
                 android:background="@drawable/round" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l45"
                 android:layout_width="40dp"
                 android:layout_height="15dp"
@@ -129,42 +129,42 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l06"
                 android:layout_width="15dp"
                 android:layout_height="40dp"
                 android:layout_marginEnd="40dp"
                 android:background="@color/gray" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l17"
                 android:layout_width="15dp"
                 android:layout_height="40dp"
                 android:layout_marginEnd="40dp"
                 android:background="@color/gray" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l28"
                 android:layout_width="15dp"
                 android:layout_height="40dp"
                 android:layout_marginEnd="40dp"
                 android:background="@color/gray" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l39"
                 android:layout_width="15dp"
                 android:layout_height="40dp"
                 android:layout_marginEnd="40dp"
                 android:background="@color/gray" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l410"
                 android:layout_width="15dp"
                 android:layout_height="40dp"
                 android:layout_marginEnd="40dp"
                 android:background="@color/gray" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l511"
                 android:layout_width="15dp"
                 android:layout_height="40dp"
@@ -186,7 +186,7 @@
                 android:layout_height="15dp"
                 android:background="@drawable/round" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l67"
                 android:layout_width="40dp"
                 android:layout_height="15dp"
@@ -197,7 +197,7 @@
                 android:layout_height="15dp"
                 android:background="@drawable/round" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l78"
                 android:layout_width="40dp"
                 android:layout_height="15dp"
@@ -208,7 +208,7 @@
                 android:layout_height="15dp"
                 android:background="@drawable/round" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l89"
                 android:layout_width="40dp"
                 android:layout_height="15dp"
@@ -219,7 +219,7 @@
                 android:layout_height="15dp"
                 android:background="@drawable/round" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l910"
                 android:layout_width="40dp"
                 android:layout_height="15dp"
@@ -230,7 +230,7 @@
                 android:layout_height="15dp"
                 android:background="@drawable/round" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l1011"
                 android:layout_width="40dp"
                 android:layout_height="15dp"
@@ -253,42 +253,42 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l612"
                 android:layout_width="15dp"
                 android:layout_height="40dp"
                 android:layout_marginEnd="40dp"
                 android:background="@color/gray" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l713"
                 android:layout_width="15dp"
                 android:layout_height="40dp"
                 android:layout_marginEnd="40dp"
                 android:background="@color/gray" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l814"
                 android:layout_width="15dp"
                 android:layout_height="40dp"
                 android:layout_marginEnd="40dp"
                 android:background="@color/gray" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l915"
                 android:layout_width="15dp"
                 android:layout_height="40dp"
                 android:layout_marginEnd="40dp"
                 android:background="@color/gray" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l1016"
                 android:layout_width="15dp"
                 android:layout_height="40dp"
                 android:layout_marginEnd="40dp"
                 android:background="@color/gray" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l1117"
                 android:layout_width="15dp"
                 android:layout_height="40dp"
@@ -310,7 +310,7 @@
                 android:layout_height="15dp"
                 android:background="@drawable/round" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l1213"
                 android:layout_width="40dp"
                 android:layout_height="15dp"
@@ -321,7 +321,7 @@
                 android:layout_height="15dp"
                 android:background="@drawable/round" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l1314"
                 android:layout_width="40dp"
                 android:layout_height="15dp"
@@ -332,7 +332,7 @@
                 android:layout_height="15dp"
                 android:background="@drawable/round" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l1415"
                 android:layout_width="40dp"
                 android:layout_height="15dp"
@@ -343,7 +343,7 @@
                 android:layout_height="15dp"
                 android:background="@drawable/round" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l1516"
                 android:layout_width="40dp"
                 android:layout_height="15dp"
@@ -354,7 +354,7 @@
                 android:layout_height="15dp"
                 android:background="@drawable/round" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l1617"
                 android:layout_width="40dp"
                 android:layout_height="15dp"
@@ -377,42 +377,42 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l1218"
                 android:layout_width="15dp"
                 android:layout_height="40dp"
                 android:layout_marginEnd="40dp"
                 android:background="@color/gray" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l1319"
                 android:layout_width="15dp"
                 android:layout_height="40dp"
                 android:layout_marginEnd="40dp"
                 android:background="@color/gray" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l1420"
                 android:layout_width="15dp"
                 android:layout_height="40dp"
                 android:layout_marginEnd="40dp"
                 android:background="@color/gray" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l1521"
                 android:layout_width="15dp"
                 android:layout_height="40dp"
                 android:layout_marginEnd="40dp"
                 android:background="@color/gray" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l1622"
                 android:layout_width="15dp"
                 android:layout_height="40dp"
                 android:layout_marginEnd="40dp"
                 android:background="@color/gray" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l1723"
                 android:layout_width="15dp"
                 android:layout_height="40dp"
@@ -434,7 +434,7 @@
                 android:layout_height="15dp"
                 android:background="@drawable/round" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l1819"
                 android:layout_width="40dp"
                 android:layout_height="15dp"
@@ -445,7 +445,7 @@
                 android:layout_height="15dp"
                 android:background="@drawable/round" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l1920"
                 android:layout_width="40dp"
                 android:layout_height="15dp"
@@ -456,7 +456,7 @@
                 android:layout_height="15dp"
                 android:background="@drawable/round" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l2021"
                 android:layout_width="40dp"
                 android:layout_height="15dp"
@@ -467,7 +467,7 @@
                 android:layout_height="15dp"
                 android:background="@drawable/round" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l2122"
                 android:layout_width="40dp"
                 android:layout_height="15dp"
@@ -478,7 +478,7 @@
                 android:layout_height="15dp"
                 android:background="@drawable/round" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l2223"
                 android:layout_width="40dp"
                 android:layout_height="15dp"
@@ -501,42 +501,42 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l824"
                 android:layout_width="15dp"
                 android:layout_height="40dp"
                 android:layout_marginEnd="40dp"
                 android:background="@color/gray" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l1925"
                 android:layout_width="15dp"
                 android:layout_height="40dp"
                 android:layout_marginEnd="40dp"
                 android:background="@color/gray" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l1526"
                 android:layout_width="15dp"
                 android:layout_height="40dp"
                 android:layout_marginEnd="40dp"
                 android:background="@color/gray" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l2127"
                 android:layout_width="15dp"
                 android:layout_height="40dp"
                 android:layout_marginEnd="40dp"
                 android:background="@color/gray" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l2228"
                 android:layout_width="15dp"
                 android:layout_height="40dp"
                 android:layout_marginEnd="40dp"
                 android:background="@color/gray" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l2329"
                 android:layout_width="15dp"
                 android:layout_height="40dp"
@@ -558,7 +558,7 @@
                 android:layout_height="15dp"
                 android:background="@drawable/round" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l2425"
                 android:layout_width="40dp"
                 android:layout_height="15dp"
@@ -569,7 +569,7 @@
                 android:layout_height="15dp"
                 android:background="@drawable/round" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l2526"
                 android:layout_width="40dp"
                 android:layout_height="15dp"
@@ -580,7 +580,7 @@
                 android:layout_height="15dp"
                 android:background="@drawable/round" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l2627"
                 android:layout_width="40dp"
                 android:layout_height="15dp"
@@ -591,7 +591,7 @@
                 android:layout_height="15dp"
                 android:background="@drawable/round" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l2728"
                 android:layout_width="40dp"
                 android:layout_height="15dp"
@@ -602,7 +602,7 @@
                 android:layout_height="15dp"
                 android:background="@drawable/round" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l2829"
                 android:layout_width="40dp"
                 android:layout_height="15dp"
@@ -625,42 +625,42 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l2430"
                 android:layout_width="15dp"
                 android:layout_height="40dp"
                 android:layout_marginEnd="40dp"
                 android:background="@color/gray" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l2531"
                 android:layout_width="15dp"
                 android:layout_height="40dp"
                 android:layout_marginEnd="40dp"
                 android:background="@color/gray" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l2631"
                 android:layout_width="15dp"
                 android:layout_height="40dp"
                 android:layout_marginEnd="40dp"
                 android:background="@color/gray" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l2733"
                 android:layout_width="15dp"
                 android:layout_height="40dp"
                 android:layout_marginEnd="40dp"
                 android:background="@color/gray" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l2834"
                 android:layout_width="15dp"
                 android:layout_height="40dp"
                 android:layout_marginEnd="40dp"
                 android:background="@color/gray" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l2935"
                 android:layout_width="15dp"
                 android:layout_height="40dp"
@@ -682,7 +682,7 @@
                 android:layout_height="15dp"
                 android:background="@drawable/round" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l3031"
                 android:layout_width="40dp"
                 android:layout_height="15dp"
@@ -693,7 +693,7 @@
                 android:layout_height="15dp"
                 android:background="@drawable/round" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l3132"
                 android:layout_width="40dp"
                 android:layout_height="15dp"
@@ -704,7 +704,7 @@
                 android:layout_height="15dp"
                 android:background="@drawable/round" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l3233"
                 android:layout_width="40dp"
                 android:layout_height="15dp"
@@ -715,7 +715,7 @@
                 android:layout_height="15dp"
                 android:background="@drawable/round" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l3334"
                 android:layout_width="40dp"
                 android:layout_height="15dp"
@@ -726,7 +726,7 @@
                 android:layout_height="15dp"
                 android:background="@drawable/round" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l3435"
                 android:layout_width="40dp"
                 android:layout_height="15dp"
@@ -749,42 +749,42 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l3036"
                 android:layout_width="15dp"
                 android:layout_height="40dp"
                 android:layout_marginEnd="40dp"
                 android:background="@color/gray" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l337"
                 android:layout_width="15dp"
                 android:layout_height="40dp"
                 android:layout_marginEnd="40dp"
                 android:background="@color/gray" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l3238"
                 android:layout_width="15dp"
                 android:layout_height="40dp"
                 android:layout_marginEnd="40dp"
                 android:background="@color/gray" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l3339"
                 android:layout_width="15dp"
                 android:layout_height="40dp"
                 android:layout_marginEnd="40dp"
                 android:background="@color/gray" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l3440"
                 android:layout_width="15dp"
                 android:layout_height="40dp"
                 android:layout_marginEnd="40dp"
                 android:background="@color/gray" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l3541"
                 android:layout_width="15dp"
                 android:layout_height="40dp"
@@ -807,7 +807,7 @@
                 android:layout_height="15dp"
                 android:background="@drawable/round" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l3637"
                 android:layout_width="40dp"
                 android:layout_height="15dp"
@@ -818,7 +818,7 @@
                 android:layout_height="15dp"
                 android:background="@drawable/round" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l3738"
                 android:layout_width="40dp"
                 android:layout_height="15dp"
@@ -829,7 +829,7 @@
                 android:layout_height="15dp"
                 android:background="@drawable/round" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l3839"
                 android:layout_width="40dp"
                 android:layout_height="15dp"
@@ -840,7 +840,7 @@
                 android:layout_height="15dp"
                 android:background="@drawable/round" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l3940"
                 android:layout_width="40dp"
                 android:layout_height="15dp"
@@ -851,7 +851,7 @@
                 android:layout_height="15dp"
                 android:background="@drawable/round" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l4041"
                 android:layout_width="40dp"
                 android:layout_height="15dp"
@@ -874,42 +874,42 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l3641"
                 android:layout_width="15dp"
                 android:layout_height="40dp"
                 android:layout_marginEnd="40dp"
                 android:background="@color/gray" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l3743"
                 android:layout_width="15dp"
                 android:layout_height="40dp"
                 android:layout_marginEnd="40dp"
                 android:background="@color/gray" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l3844"
                 android:layout_width="15dp"
                 android:layout_height="40dp"
                 android:layout_marginEnd="40dp"
                 android:background="@color/gray" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l3945"
                 android:layout_width="15dp"
                 android:layout_height="40dp"
                 android:layout_marginEnd="40dp"
                 android:background="@color/gray" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l4046"
                 android:layout_width="15dp"
                 android:layout_height="40dp"
                 android:layout_marginEnd="40dp"
                 android:background="@color/gray" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l4147"
                 android:layout_width="15dp"
                 android:layout_height="40dp"
@@ -930,7 +930,7 @@
                 android:layout_height="15dp"
                 android:background="@drawable/round" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l4243"
                 android:layout_width="40dp"
                 android:layout_height="15dp"
@@ -941,7 +941,7 @@
                 android:layout_height="15dp"
                 android:background="@drawable/round" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l4344"
                 android:layout_width="40dp"
                 android:layout_height="15dp"
@@ -952,7 +952,7 @@
                 android:layout_height="15dp"
                 android:background="@drawable/round" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l4445"
                 android:layout_width="40dp"
                 android:layout_height="15dp"
@@ -963,7 +963,7 @@
                 android:layout_height="15dp"
                 android:background="@drawable/round" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l4546"
                 android:layout_width="40dp"
                 android:layout_height="15dp"
@@ -974,7 +974,7 @@
                 android:layout_height="15dp"
                 android:background="@drawable/round" />
 
-            <TextView
+            <com.example.gameonsocket.LineView
                 android:id="@+id/l4647"
                 android:layout_width="40dp"
                 android:layout_height="15dp"
@@ -989,11 +989,24 @@
         </LinearLayout>
     </LinearLayout>
 
-    <Button
-        android:id="@+id/sendBtn"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="send request" />
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/playerName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:hint="نام بازیکن"/>
+
+        <Button
+            android:id="@+id/sendBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="send request" />
+    </LinearLayout>
 
 </RelativeLayout>

@@ -1,1012 +1,929 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
-    <LinearLayout
-        android:id="@+id/scoreBar"
+<layout>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center">
-
-        <TextView
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:text="ali"
-            android:textAlignment="center"
-            android:textColor="#E53935" />
-
-        <TextView
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:text="reza"
-            android:textAlignment="center"
-            android:textColor="#43A047" />
-
-        <TextView
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:text="amir"
-            android:textAlignment="center"
-            android:textColor="#FDD835" />
-
-        <TextView
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:text="seyed"
-            android:textAlignment="center"
-            android:textColor="#000000" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/gameLayer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/scoreBar"
-        android:layout_marginTop="15dp"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
 
         <LinearLayout
+            android:id="@+id/scoreBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:gravity="center"
-            android:orientation="horizontal">
+            android:gravity="center">
 
             <TextView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/round" />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l01"
-                android:layout_width="40dp"
-                android:layout_height="15dp"
-                />
+                android:id="@+id/gamer1"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="center" />
 
             <TextView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/round" />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l12"
-                android:layout_width="40dp"
-                android:layout_height="17dp"
-                />
+                android:id="@+id/gamer2"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="center" />
 
             <TextView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/round" />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l23"
-                android:layout_width="40dp"
-                android:layout_height="15dp"
-                />
+                android:id="@+id/gamer3"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="center" />
 
             <TextView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/round" />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l34"
-                android:layout_width="40dp"
-                android:layout_height="15dp"
-                />
-
-            <TextView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/round" />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l45"
-                android:layout_width="40dp"
-                android:layout_height="15dp"
-                />
-
-            <TextView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/round" />
-
-
+                android:id="@+id/gamer4"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="center" />
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/gameLayer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/scoreBar"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:gravity="center"
-            android:orientation="horizontal">
+            android:layout_marginTop="15dp"
+            android:orientation="vertical">
 
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l06"
-                android:layout_width="15dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="40dp"
-                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:gravity="center"
+                android:orientation="horizontal">
 
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l17"
-                android:layout_width="15dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="40dp"
-                />
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/round" />
 
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l28"
-                android:layout_width="15dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="40dp"
-                />
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l01"
+                    android:layout_width="40dp"
+                    android:layout_height="15dp" />
 
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l39"
-                android:layout_width="15dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="40dp"
-                />
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/round" />
 
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l410"
-                android:layout_width="15dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="40dp"
-                />
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l12"
+                    android:layout_width="40dp"
+                    android:layout_height="17dp" />
 
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l511"
-                android:layout_width="15dp"
-                android:layout_height="40dp"
-                />
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/round" />
 
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l23"
+                    android:layout_width="40dp"
+                    android:layout_height="15dp" />
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/round" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l34"
+                    android:layout_width="40dp"
+                    android:layout_height="15dp" />
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/round" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l45"
+                    android:layout_width="40dp"
+                    android:layout_height="15dp" />
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/round" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/scoreBar"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l06"
+                    android:layout_width="15dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="40dp" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l17"
+                    android:layout_width="15dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="40dp" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l28"
+                    android:layout_width="15dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="40dp" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l39"
+                    android:layout_width="15dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="40dp" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l410"
+                    android:layout_width="15dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="40dp" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l511"
+                    android:layout_width="15dp"
+                    android:layout_height="40dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/scoreBar"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/round" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l67"
+                    android:layout_width="40dp"
+                    android:layout_height="15dp" />
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/round" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l78"
+                    android:layout_width="40dp"
+                    android:layout_height="15dp" />
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/round" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l89"
+                    android:layout_width="40dp"
+                    android:layout_height="15dp" />
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/round" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l910"
+                    android:layout_width="40dp"
+                    android:layout_height="15dp" />
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/round" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l1011"
+                    android:layout_width="40dp"
+                    android:layout_height="15dp" />
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/round" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/scoreBar"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l612"
+                    android:layout_width="15dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="40dp" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l713"
+                    android:layout_width="15dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="40dp" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l814"
+                    android:layout_width="15dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="40dp" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l915"
+                    android:layout_width="15dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="40dp" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l1016"
+                    android:layout_width="15dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="40dp" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l1117"
+                    android:layout_width="15dp"
+                    android:layout_height="40dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/scoreBar"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/round" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l1213"
+                    android:layout_width="40dp"
+                    android:layout_height="15dp" />
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/round" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l1314"
+                    android:layout_width="40dp"
+                    android:layout_height="15dp" />
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/round" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l1415"
+                    android:layout_width="40dp"
+                    android:layout_height="15dp" />
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/round" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l1516"
+                    android:layout_width="40dp"
+                    android:layout_height="15dp" />
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/round" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l1617"
+                    android:layout_width="40dp"
+                    android:layout_height="15dp" />
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/round" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/scoreBar"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l1218"
+                    android:layout_width="15dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="40dp" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l1319"
+                    android:layout_width="15dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="40dp" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l1420"
+                    android:layout_width="15dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="40dp" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l1521"
+                    android:layout_width="15dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="40dp" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l1622"
+                    android:layout_width="15dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="40dp" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l1723"
+                    android:layout_width="15dp"
+                    android:layout_height="40dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/scoreBar"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/round" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l1819"
+                    android:layout_width="40dp"
+                    android:layout_height="15dp" />
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/round" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l1920"
+                    android:layout_width="40dp"
+                    android:layout_height="15dp" />
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/round" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l2021"
+                    android:layout_width="40dp"
+                    android:layout_height="15dp" />
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/round" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l2122"
+                    android:layout_width="40dp"
+                    android:layout_height="15dp" />
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/round" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l2223"
+                    android:layout_width="40dp"
+                    android:layout_height="15dp" />
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/round" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/scoreBar"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l1824"
+                    android:layout_width="15dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="40dp" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l1925"
+                    android:layout_width="15dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="40dp" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l2026"
+                    android:layout_width="15dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="40dp" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l2127"
+                    android:layout_width="15dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="40dp" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l2228"
+                    android:layout_width="15dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="40dp" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l2329"
+                    android:layout_width="15dp"
+                    android:layout_height="40dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/scoreBar"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/round" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l2425"
+                    android:layout_width="40dp"
+                    android:layout_height="15dp" />
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/round" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l2526"
+                    android:layout_width="40dp"
+                    android:layout_height="15dp" />
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/round" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l2627"
+                    android:layout_width="40dp"
+                    android:layout_height="15dp" />
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/round" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l2728"
+                    android:layout_width="40dp"
+                    android:layout_height="15dp" />
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/round" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l2829"
+                    android:layout_width="40dp"
+                    android:layout_height="15dp" />
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/round" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/scoreBar"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l2430"
+                    android:layout_width="15dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="40dp" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l2531"
+                    android:layout_width="15dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="40dp" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l2632"
+                    android:layout_width="15dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="40dp" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l2733"
+                    android:layout_width="15dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="40dp" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l2834"
+                    android:layout_width="15dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="40dp" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l2935"
+                    android:layout_width="15dp"
+                    android:layout_height="40dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/scoreBar"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/round" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l3031"
+                    android:layout_width="40dp"
+                    android:layout_height="15dp" />
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/round" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l3132"
+                    android:layout_width="40dp"
+                    android:layout_height="15dp" />
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/round" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l3233"
+                    android:layout_width="40dp"
+                    android:layout_height="15dp" />
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/round" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l3334"
+                    android:layout_width="40dp"
+                    android:layout_height="15dp" />
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/round" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l3435"
+                    android:layout_width="40dp"
+                    android:layout_height="15dp" />
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/round" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/scoreBar"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l3036"
+                    android:layout_width="15dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="40dp" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l3137"
+                    android:layout_width="15dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="40dp" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l3238"
+                    android:layout_width="15dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="40dp" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l3339"
+                    android:layout_width="15dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="40dp" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l3440"
+                    android:layout_width="15dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="40dp" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l3541"
+                    android:layout_width="15dp"
+                    android:layout_height="40dp"
+
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/scoreBar"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/round" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l3637"
+                    android:layout_width="40dp"
+                    android:layout_height="15dp" />
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/round" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l3738"
+                    android:layout_width="40dp"
+                    android:layout_height="15dp" />
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/round" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l3839"
+                    android:layout_width="40dp"
+                    android:layout_height="15dp" />
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/round" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l3940"
+                    android:layout_width="40dp"
+                    android:layout_height="15dp" />
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/round" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l4041"
+                    android:layout_width="40dp"
+                    android:layout_height="15dp" />
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/round" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/scoreBar"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l3642"
+                    android:layout_width="15dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="40dp" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l3743"
+                    android:layout_width="15dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="40dp" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l3844"
+                    android:layout_width="15dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="40dp" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l3945"
+                    android:layout_width="15dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="40dp" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l4046"
+                    android:layout_width="15dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="40dp" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l4147"
+                    android:layout_width="15dp"
+                    android:layout_height="40dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/round" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l4243"
+                    android:layout_width="40dp"
+                    android:layout_height="15dp" />
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/round" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l4344"
+                    android:layout_width="40dp"
+                    android:layout_height="15dp" />
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/round" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l4445"
+                    android:layout_width="40dp"
+                    android:layout_height="15dp" />
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/round" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l4546"
+                    android:layout_width="40dp"
+                    android:layout_height="15dp" />
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/round" />
+
+                <com.example.gameonsocket.myLineView
+                    android:id="@+id/l4647"
+                    android:layout_width="40dp"
+                    android:layout_height="15dp" />
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/round" />
+
+
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/scoreBar"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:gravity="center"
-            android:orientation="horizontal">
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
 
-            <TextView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/round" />
+            <EditText
+                android:id="@+id/playerName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="نام بازیکن"
+                android:padding="10dp" />
 
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l67"
-                android:layout_width="40dp"
-                android:layout_height="15dp"
-                />
-
-            <TextView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/round" />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l78"
-                android:layout_width="40dp"
-                android:layout_height="15dp"
-                />
-
-            <TextView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/round" />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l89"
-                android:layout_width="40dp"
-                android:layout_height="15dp"
-                />
-
-            <TextView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/round" />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l910"
-                android:layout_width="40dp"
-                android:layout_height="15dp"
-                />
-
-            <TextView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/round" />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l1011"
-                android:layout_width="40dp"
-                android:layout_height="15dp"
-                />
-
-            <TextView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/round" />
-
-
+            <Button
+                android:id="@+id/sendBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="send request" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/scoreBar"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l612"
-                android:layout_width="15dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="40dp"
-                />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l713"
-                android:layout_width="15dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="40dp"
-                />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l814"
-                android:layout_width="15dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="40dp"
-                />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l915"
-                android:layout_width="15dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="40dp"
-                />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l1016"
-                android:layout_width="15dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="40dp"
-                />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l1117"
-                android:layout_width="15dp"
-                android:layout_height="40dp"
-                />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/scoreBar"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/round" />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l1213"
-                android:layout_width="40dp"
-                android:layout_height="15dp"
-                />
-
-            <TextView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/round" />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l1314"
-                android:layout_width="40dp"
-                android:layout_height="15dp"
-                />
-
-            <TextView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/round" />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l1415"
-                android:layout_width="40dp"
-                android:layout_height="15dp"
-                />
-
-            <TextView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/round" />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l1516"
-                android:layout_width="40dp"
-                android:layout_height="15dp"
-                />
-
-            <TextView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/round" />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l1617"
-                android:layout_width="40dp"
-                android:layout_height="15dp"
-                />
-
-            <TextView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/round" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/scoreBar"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l1218"
-                android:layout_width="15dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="40dp"
-                />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l1319"
-                android:layout_width="15dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="40dp"
-                />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l1420"
-                android:layout_width="15dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="40dp"
-                />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l1521"
-                android:layout_width="15dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="40dp"
-                />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l1622"
-                android:layout_width="15dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="40dp"
-                />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l1723"
-                android:layout_width="15dp"
-                android:layout_height="40dp"
-                />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/scoreBar"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/round" />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l1819"
-                android:layout_width="40dp"
-                android:layout_height="15dp"
-                />
-
-            <TextView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/round" />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l1920"
-                android:layout_width="40dp"
-                android:layout_height="15dp"
-                />
-
-            <TextView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/round" />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l2021"
-                android:layout_width="40dp"
-                android:layout_height="15dp"
-                />
-
-            <TextView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/round" />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l2122"
-                android:layout_width="40dp"
-                android:layout_height="15dp"
-                />
-
-            <TextView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/round" />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l2223"
-                android:layout_width="40dp"
-                android:layout_height="15dp"
-                />
-
-            <TextView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/round" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/scoreBar"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l1824"
-                android:layout_width="15dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="40dp"
-                />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l1925"
-                android:layout_width="15dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="40dp"
-                />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l2026"
-                android:layout_width="15dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="40dp"
-                />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l2127"
-                android:layout_width="15dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="40dp"
-                />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l2228"
-                android:layout_width="15dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="40dp"
-                />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l2329"
-                android:layout_width="15dp"
-                android:layout_height="40dp"
-                />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/scoreBar"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/round" />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l2425"
-                android:layout_width="40dp"
-                android:layout_height="15dp"
-                />
-
-            <TextView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/round" />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l2526"
-                android:layout_width="40dp"
-                android:layout_height="15dp"
-                />
-
-            <TextView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/round" />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l2627"
-                android:layout_width="40dp"
-                android:layout_height="15dp"
-                />
-
-            <TextView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/round" />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l2728"
-                android:layout_width="40dp"
-                android:layout_height="15dp"
-                />
-
-            <TextView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/round" />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l2829"
-                android:layout_width="40dp"
-                android:layout_height="15dp"
-                />
-
-            <TextView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/round" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/scoreBar"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l2430"
-                android:layout_width="15dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="40dp"
-                />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l2531"
-                android:layout_width="15dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="40dp"
-                />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l2632"
-                android:layout_width="15dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="40dp"
-                />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l2733"
-                android:layout_width="15dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="40dp"
-                />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l2834"
-                android:layout_width="15dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="40dp"
-                />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l2935"
-                android:layout_width="15dp"
-                android:layout_height="40dp"
-                />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/scoreBar"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/round" />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l3031"
-                android:layout_width="40dp"
-                android:layout_height="15dp"
-                />
-
-            <TextView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/round" />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l3132"
-                android:layout_width="40dp"
-                android:layout_height="15dp"
-                />
-
-            <TextView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/round" />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l3233"
-                android:layout_width="40dp"
-                android:layout_height="15dp"
-                />
-
-            <TextView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/round" />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l3334"
-                android:layout_width="40dp"
-                android:layout_height="15dp"
-                />
-
-            <TextView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/round" />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l3435"
-                android:layout_width="40dp"
-                android:layout_height="15dp"
-                />
-
-            <TextView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/round" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/scoreBar"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l3036"
-                android:layout_width="15dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="40dp"
-                />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l3137"
-                android:layout_width="15dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="40dp"
-                />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l3238"
-                android:layout_width="15dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="40dp"
-                />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l3339"
-                android:layout_width="15dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="40dp"
-                />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l3440"
-                android:layout_width="15dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="40dp"
-                />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l3541"
-                android:layout_width="15dp"
-                android:layout_height="40dp"
-
-                />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/scoreBar"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/round" />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l3637"
-                android:layout_width="40dp"
-                android:layout_height="15dp"
-                />
-
-            <TextView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/round" />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l3738"
-                android:layout_width="40dp"
-                android:layout_height="15dp"
-                />
-
-            <TextView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/round" />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l3839"
-                android:layout_width="40dp"
-                android:layout_height="15dp"
-                />
-
-            <TextView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/round" />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l3940"
-                android:layout_width="40dp"
-                android:layout_height="15dp"
-                />
-
-            <TextView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/round" />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l4041"
-                android:layout_width="40dp"
-                android:layout_height="15dp"
-                />
-
-            <TextView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/round" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/scoreBar"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l3642"
-                android:layout_width="15dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="40dp"
-                />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l3743"
-                android:layout_width="15dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="40dp"
-                />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l3844"
-                android:layout_width="15dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="40dp"
-                />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l3945"
-                android:layout_width="15dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="40dp"
-                />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l4046"
-                android:layout_width="15dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="40dp"
-                />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l4147"
-                android:layout_width="15dp"
-                android:layout_height="40dp"
-                />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/round" />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l4243"
-                android:layout_width="40dp"
-                android:layout_height="15dp"
-                />
-
-            <TextView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/round" />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l4344"
-                android:layout_width="40dp"
-                android:layout_height="15dp"
-                />
-
-            <TextView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/round" />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l4445"
-                android:layout_width="40dp"
-                android:layout_height="15dp"
-                />
-
-            <TextView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/round" />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l4546"
-                android:layout_width="40dp"
-                android:layout_height="15dp"
-                />
-
-            <TextView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/round" />
-
-            <com.example.gameonsocket.myLineView
-                android:id="@+id/l4647"
-                android:layout_width="40dp"
-                android:layout_height="15dp"
-                />
-
-            <TextView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/round" />
-
-
-        </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:orientation="vertical">
-
-        <EditText
-            android:id="@+id/playerName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:hint="نام بازیکن"/>
-
-        <Button
-            android:id="@+id/sendBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="send request" />
-    </LinearLayout>
-
-</RelativeLayout>
+    </RelativeLayout>
+</layout>

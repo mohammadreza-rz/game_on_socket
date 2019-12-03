@@ -9,6 +9,7 @@ import android.view.View;
 public class myLineView
         extends android.support.v7.widget.AppCompatTextView
         implements View.OnClickListener {
+    private static final String TAG = "lineViewLogs";
     public myLineView(Context context) {
         super(context);
         this.setBackgroundResource(R.color.gray);
@@ -33,9 +34,9 @@ public class myLineView
 
     @Override
     public void onClick(View v) {
-        v.setBackgroundResource(R.color.red);
+        v.setBackgroundResource(netUtils.userColor);
         netUtils.userMove = v.getTag().toString();
-        Log.d("bbma", "onClick: " + netUtils.userMove);
+        Log.d(TAG, "onClick: " + netUtils.userMove);
         netUtils.waitingToSend = false;
     }
 

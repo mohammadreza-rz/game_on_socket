@@ -11,7 +11,6 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     private Button sendBtn;
     private EditText playerName;
-    private TextView g1,g2,g3,g4;
 
 
     @Override
@@ -27,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
                 DataFetcher dataFetcher;
                 dataFetcher = new DataFetcher();
                 String[] a = {"initSocket", playerName.getText().toString()};
-                g1.setText(playerName.getText());
+                netUtils.g1.setText(playerName.getText());
                 dataFetcher.execute(a);
             }
         });
@@ -38,11 +37,17 @@ public class MainActivity extends AppCompatActivity {
     private void initViews() {
         sendBtn = findViewById(R.id.sendBtn);
         playerName = findViewById(R.id.playerName);
+        netUtils.ll1 = findViewById(R.id.ll1);
 
-        g1 = findViewById(R.id.gamer1);
-        g2 = findViewById(R.id.gamer2);
-        g3 = findViewById(R.id.gamer3);
-        g4 = findViewById(R.id.gamer4);
+        netUtils.g1 = findViewById(R.id.gamer1);
+        netUtils.g2 = findViewById(R.id.gamer2);
+        netUtils.g3 = findViewById(R.id.gamer3);
+        netUtils.g4 = findViewById(R.id.gamer4);
+
+        netUtils.po1 = findViewById(R.id.point1);
+        netUtils.po2 = findViewById(R.id.point2);
+        netUtils.po3 = findViewById(R.id.point3);
+        netUtils.po4 = findViewById(R.id.point4);
     }
 
 

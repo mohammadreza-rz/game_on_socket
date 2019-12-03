@@ -3,6 +3,7 @@ package com.example.gameonsocket;
 import android.annotation.SuppressLint;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.view.View;
 
 import java.io.DataInputStream;
 import java.io.IOException;
@@ -18,7 +19,7 @@ public class DataFetcher extends AsyncTask<String, Void, String> {
     private boolean myTurn;
 
     private myLineView m01, m12, m23, m34, m45, m67, m78, m89, m910, m1011, m1213, m1314, m1415, m1516, m1617, m1819, m1920, m2021, m2122, m2223, m2425, m2526, m2627, m2728, m2829, m3031, m3132, m3233, m3334, m3435, m3637, m3738, m3839, m3940, m4041, m4243, m4344, m4445, m4546, m4647;
-    private myLineView  m06,  m17,  m28,  m39,  m410,  m511,  m612,  m713,  m814,  m915,  m1016,  m1117,  m1218,  m1319,  m1420,  m1521,  m1622,  m1723,  m1824,  m1925,  m2026,  m2127,  m2228,  m2329,  m2430,  m2531,  m2632,  m2733,  m2834,  m2935,  m3036,  m3137,  m3238,  m3339,  m3440,  m3541,  m3642,  m3743,  m3844,  m3945,  m4046,  m4147;
+    private myLineView m06, m17, m28, m39, m410, m511, m612, m713, m814, m915, m1016, m1117, m1218, m1319, m1420, m1521, m1622, m1723, m1824, m1925, m2026, m2127, m2228, m2329, m2430, m2531, m2632, m2733, m2834, m2935, m3036, m3137, m3238, m3339, m3440, m3541, m3642, m3743, m3844, m3945, m4046, m4147;
 
 
     @Override
@@ -52,7 +53,7 @@ public class DataFetcher extends AsyncTask<String, Void, String> {
 
     private void initSocket(String name) {
         try {
-            netUtils.s = new Socket(InetAddress.getByName("192.168.43.67"), 2000);
+            netUtils.s = new Socket(InetAddress.getByName("192.168.43.200"), 2000);
             DataInputStream is = new DataInputStream(netUtils.s.getInputStream());
             int nobat = Integer.parseInt(is.readLine());
             switch (nobat) {
@@ -76,31 +77,53 @@ public class DataFetcher extends AsyncTask<String, Void, String> {
                 Log.d(TAG, "+++++++++++ read line -> " + readLine + " +++++++++++");
                 if (readLine.equals("your name ?")) {
                     sendUserAction(name);
-                } else {
-                    if (readLine.equals("your turn")) {
-                        netUtils.waitingToSend = true;
-                        while (netUtils.waitingToSend) {
-                        }
-                        sendUserAction(netUtils.userMove);
-                    } else if (!readLine.equals("") && !readLine.contains("turn")){
+                } else if (readLine.equals("your turn")) {
+                    netUtils.waitingToSend = true;
+                    while (netUtils.waitingToSend) {
+                    }
+                    sendUserAction(netUtils.userMove);
+                } else if (!readLine.equals("") && !readLine.contains("turn")) {
+                    if (readLine.contains("names:")) {
+                        netUtils.gamerNames = new String[4];
+                        netUtils.gamerNames = readLine.substring(6).split(",");
+                        netUtils.ctx.runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                netUtils.g1.setText(netUtils.gamerNames[0] + " : ");
+                                netUtils.po1.setText(String.valueOf(netUtils.p1));
+                                netUtils.g2.setText(netUtils.gamerNames[1] + " : ");
+                                netUtils.po2.setText(String.valueOf(netUtils.p2));
+                            }
+                        });
+
+                        //todo: needed to uncommented if 4 gamers want to play
+//                        netUtils.g3.setText(netUtils.gamerNames[2]);
+//                        netUtils.g4.setText(netUtils.gamerNames[3]);
+                    } else {
                         int userNum = Integer.parseInt(readLine.substring(0, 1));
+                        String[] moveAndPoint = readLine.substring(2).split(":");
                         switch (userNum) {
                             case 0:
-                                setNewMoveToBoard(readLine.substring(2), userNum, R.color.red);
+                                netUtils.p1 =Integer.parseInt(moveAndPoint[1]);
+                                setNewMoveToBoard(moveAndPoint[0], moveAndPoint[1], R.color.red, userNum);
                                 break;
                             case 1:
-                                setNewMoveToBoard(readLine.substring(2), userNum, R.color.green);
+                                netUtils.p2 =Integer.parseInt(moveAndPoint[1]);
+                                setNewMoveToBoard(moveAndPoint[0], moveAndPoint[1], R.color.green, userNum);
                                 break;
                             case 2:
-                                setNewMoveToBoard(readLine.substring(2), userNum, R.color.yellow);
+                                netUtils.p3 =Integer.parseInt(moveAndPoint[1]);
+                                setNewMoveToBoard(moveAndPoint[0], moveAndPoint[1], R.color.yellow, userNum);
                                 break;
                             case 3:
-                                setNewMoveToBoard(readLine.substring(2), userNum, R.color.black);
+                                netUtils.p4 =Integer.parseInt(moveAndPoint[1]);
+                                setNewMoveToBoard(moveAndPoint[0], moveAndPoint[1], R.color.black, userNum);
                                 break;
                         }
-
                     }
+
                 }
+
             }
 
         } catch (IOException e) {
@@ -109,11 +132,24 @@ public class DataFetcher extends AsyncTask<String, Void, String> {
     }
 
 
-
-    private void setNewMoveToBoard(final String move, int userNum, final int color) {
+    private void setNewMoveToBoard(final String move, final String gPoint, final int color, final int userName) {
         netUtils.ctx.runOnUiThread(new Runnable() {
             @Override
             public void run() {
+                switch (userName){
+                    case 0:
+                        netUtils.po1.setText(String.valueOf(netUtils.p1));
+                        break;
+                    case 1:
+                        netUtils.po2.setText(String.valueOf(netUtils.p2));
+                        break;
+                    case 2:
+                        netUtils.po3.setText(String.valueOf(netUtils.p3));
+                        break;
+                    case 3:
+                        netUtils.po4.setText(String.valueOf(netUtils.p4));
+                        break;
+                }
                 switch (move) {
                     case "0,1":
                         m01.setBackgroundResource(color);
@@ -466,18 +502,18 @@ public class DataFetcher extends AsyncTask<String, Void, String> {
         m1415 = netUtils.ctx.findViewById(R.id.l1415);
         m1516 = netUtils.ctx.findViewById(R.id.l1516);
         m1617 = netUtils.ctx.findViewById(R.id.l1617);
-         m06 = netUtils.ctx.findViewById(R.id.l06);
-         m17 = netUtils.ctx.findViewById(R.id.l17);
-         m28 = netUtils.ctx.findViewById(R.id.l28);
-         m39 = netUtils.ctx.findViewById(R.id.l39);
-         m410 = netUtils.ctx.findViewById(R.id.l410);
-         m511 = netUtils.ctx.findViewById(R.id.l511);
-         m612 = netUtils.ctx.findViewById(R.id.l612);
-         m713 = netUtils.ctx.findViewById(R.id.l713);
-         m814 = netUtils.ctx.findViewById(R.id.l814);
-         m915 = netUtils.ctx.findViewById(R.id.l915);
-         m1016 = netUtils.ctx.findViewById(R.id.l1016);
-         m1117 = netUtils.ctx.findViewById(R.id.l1117);
+        m06 = netUtils.ctx.findViewById(R.id.l06);
+        m17 = netUtils.ctx.findViewById(R.id.l17);
+        m28 = netUtils.ctx.findViewById(R.id.l28);
+        m39 = netUtils.ctx.findViewById(R.id.l39);
+        m410 = netUtils.ctx.findViewById(R.id.l410);
+        m511 = netUtils.ctx.findViewById(R.id.l511);
+        m612 = netUtils.ctx.findViewById(R.id.l612);
+        m713 = netUtils.ctx.findViewById(R.id.l713);
+        m814 = netUtils.ctx.findViewById(R.id.l814);
+        m915 = netUtils.ctx.findViewById(R.id.l915);
+        m1016 = netUtils.ctx.findViewById(R.id.l1016);
+        m1117 = netUtils.ctx.findViewById(R.id.l1117);
         m1819 = netUtils.ctx.findViewById(R.id.l1819);
         m1920 = netUtils.ctx.findViewById(R.id.l1920);
         m2021 = netUtils.ctx.findViewById(R.id.l2021);
@@ -503,36 +539,36 @@ public class DataFetcher extends AsyncTask<String, Void, String> {
         m4445 = netUtils.ctx.findViewById(R.id.l4445);
         m4546 = netUtils.ctx.findViewById(R.id.l4546);
         m4647 = netUtils.ctx.findViewById(R.id.l4647);
-         m1218 = netUtils.ctx.findViewById(R.id.l1218);
-         m1319 = netUtils.ctx.findViewById(R.id.l1319);
-         m1420 = netUtils.ctx.findViewById(R.id.l1420);
-         m1521 = netUtils.ctx.findViewById(R.id.l1521);
-         m1622 = netUtils.ctx.findViewById(R.id.l1622);
-         m1723 = netUtils.ctx.findViewById(R.id.l1723);
-         m1824 = netUtils.ctx.findViewById(R.id.l1824);
-         m1925 = netUtils.ctx.findViewById(R.id.l1925);
-         m2026 = netUtils.ctx.findViewById(R.id.l2026);
-         m2127 = netUtils.ctx.findViewById(R.id.l2127);
-         m2228 = netUtils.ctx.findViewById(R.id.l2228);
-         m2329 = netUtils.ctx.findViewById(R.id.l2329);
-         m2430 = netUtils.ctx.findViewById(R.id.l2430);
-         m2531 = netUtils.ctx.findViewById(R.id.l2531);
-         m2632 = netUtils.ctx.findViewById(R.id.l2632);
-         m2733 = netUtils.ctx.findViewById(R.id.l2733);
-         m2834 = netUtils.ctx.findViewById(R.id.l2834);
-         m2935 = netUtils.ctx.findViewById(R.id.l2935);
-         m3036 = netUtils.ctx.findViewById(R.id.l3036);
-         m3137 = netUtils.ctx.findViewById(R.id.l3137);
-         m3238 = netUtils.ctx.findViewById(R.id.l3238);
-         m3339 = netUtils.ctx.findViewById(R.id.l3339);
-         m3440 = netUtils.ctx.findViewById(R.id.l3440);
-         m3541 = netUtils.ctx.findViewById(R.id.l3541);
-         m3642 = netUtils.ctx.findViewById(R.id.l3642);
-         m3743 = netUtils.ctx.findViewById(R.id.l3743);
-         m3844 = netUtils.ctx.findViewById(R.id.l3844);
-         m3945 = netUtils.ctx.findViewById(R.id.l3945);
-         m4046 = netUtils.ctx.findViewById(R.id.l4046);
-         m4147 = netUtils.ctx.findViewById(R.id.l4147);
+        m1218 = netUtils.ctx.findViewById(R.id.l1218);
+        m1319 = netUtils.ctx.findViewById(R.id.l1319);
+        m1420 = netUtils.ctx.findViewById(R.id.l1420);
+        m1521 = netUtils.ctx.findViewById(R.id.l1521);
+        m1622 = netUtils.ctx.findViewById(R.id.l1622);
+        m1723 = netUtils.ctx.findViewById(R.id.l1723);
+        m1824 = netUtils.ctx.findViewById(R.id.l1824);
+        m1925 = netUtils.ctx.findViewById(R.id.l1925);
+        m2026 = netUtils.ctx.findViewById(R.id.l2026);
+        m2127 = netUtils.ctx.findViewById(R.id.l2127);
+        m2228 = netUtils.ctx.findViewById(R.id.l2228);
+        m2329 = netUtils.ctx.findViewById(R.id.l2329);
+        m2430 = netUtils.ctx.findViewById(R.id.l2430);
+        m2531 = netUtils.ctx.findViewById(R.id.l2531);
+        m2632 = netUtils.ctx.findViewById(R.id.l2632);
+        m2733 = netUtils.ctx.findViewById(R.id.l2733);
+        m2834 = netUtils.ctx.findViewById(R.id.l2834);
+        m2935 = netUtils.ctx.findViewById(R.id.l2935);
+        m3036 = netUtils.ctx.findViewById(R.id.l3036);
+        m3137 = netUtils.ctx.findViewById(R.id.l3137);
+        m3238 = netUtils.ctx.findViewById(R.id.l3238);
+        m3339 = netUtils.ctx.findViewById(R.id.l3339);
+        m3440 = netUtils.ctx.findViewById(R.id.l3440);
+        m3541 = netUtils.ctx.findViewById(R.id.l3541);
+        m3642 = netUtils.ctx.findViewById(R.id.l3642);
+        m3743 = netUtils.ctx.findViewById(R.id.l3743);
+        m3844 = netUtils.ctx.findViewById(R.id.l3844);
+        m3945 = netUtils.ctx.findViewById(R.id.l3945);
+        m4046 = netUtils.ctx.findViewById(R.id.l4046);
+        m4147 = netUtils.ctx.findViewById(R.id.l4147);
     }
 
 

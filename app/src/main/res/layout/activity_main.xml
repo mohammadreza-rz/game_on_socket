@@ -15,27 +15,63 @@
 
         <TextView
             android:id="@+id/gamer1"
-            android:layout_width="60dp"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textColor="@color/red"
+            android:textSize="12sp" />
+        <TextView
+            android:id="@+id/point1"
+            android:layout_width="15dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/red"
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/gamer2"
-            android:layout_width="60dp"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textColor="@color/green"
+            android:textSize="12sp" />
+        <TextView
+            android:id="@+id/point2"
+            android:layout_width="15dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/green"
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/gamer3"
-            android:layout_width="60dp"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textColor="@color/yellow"
+            android:textSize="12sp" />
+        <TextView
+            android:id="@+id/point3"
+            android:layout_width="15dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/yellow"
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/gamer4"
-            android:layout_width="60dp"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+        <TextView
+            android:id="@+id/point4"
+            android:layout_width="15dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -904,6 +940,12 @@
 
         </LinearLayout>
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/ll1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
 
     <LinearLayout
         android:layout_width="match_parent"
